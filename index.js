@@ -115,7 +115,7 @@ function map(count, binary) {
         if (key) {
             var val = parse(key.rest);
             if (val) {
-                entries[key] = val.value;
+                entries[key.value] = val.value;
                 rest = val.rest;
             }
             else {
@@ -144,10 +144,12 @@ patterns[0xdf] = prefixed(len32, map);
 
 // parse :: binary -> {'value': top, 'rest': binary} | false
 // a return of false indicates there is not enough to parse a full value.
-exports.parse = function(binary) {
+function parse(binary) {
     if (binary.length === 0) return false;
     var discriminator = binary[0];
     var rest = binary.slice(1);
     var parser = patterns[discriminator];
     return parser && parser(rest);
 }
+
+exports.parse = parse;
