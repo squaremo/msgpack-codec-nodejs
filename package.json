@@ -1,0 +1,18 @@
+{
+  "author": "Michael Bridgen <mikeb@squaremobius.net>",
+  "name": "msgpack-codec",
+  "description": "Codec for msgpack",
+  "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/squaremo/msgpack-codec-nodejs.git"
+  },
+  "main": "index",
+  "dependencies": {
+    "bitsyntax": "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
